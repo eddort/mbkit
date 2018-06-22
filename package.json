@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/Eddort/mbkit#readme",
   "keywords": [
-    "pug", "mbkit-pug"
+    "pug",
+    "mbkit-pug"
   ],
   "dependencies": {
     "pug-code-gen": "^2.0.1",
