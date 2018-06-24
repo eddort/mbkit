@@ -10,12 +10,12 @@ module.exports = ({
     tagModels,
     template
 }, opts) => {
-    //TagModel.wrap(tagModels)
+    const model = TagModel.wrap(tagModels)
     return wrap(generateCode(parse(lex(template)), {
-        tagModels,
+        tagModels: model,
         compileDebug: false,
         pretty: true,
         inlineRuntimeFunctions: true,
         ...opts
-    }))
+    }))({__m: model})
 }

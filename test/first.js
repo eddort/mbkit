@@ -29,6 +29,7 @@ console.log(parse({
             //переписать pug_attr
             //что бы возращал значение key:value а не key=value
         block: {
+            schema: {},
           render(params) {
             // console.log(params)
            
@@ -37,6 +38,7 @@ console.log(parse({
           }
         },
         gallery: {
+            schema: {},
           render(params) {
             //   params.forEach(element => {
             //    console.log(element)
@@ -45,6 +47,7 @@ console.log(parse({
           }
         },
         image: {
+            schema: {},
           render(params) {
             // params.forEach(element => {
             //    console.log(element)
