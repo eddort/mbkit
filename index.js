@@ -1,8 +1,8 @@
 const
     lex = require('pug-lexer'),
     parse = require('pug-parser'),
-    wrap = require('pug-runtime/wrap'),
-    generateCode = require('./lib/codeGen');
+    wrap = require('./lib/runtime/wrap'),
+    generateCode = require('./lib/code-gen');
 
 module.exports = ({
     kitTagModels,

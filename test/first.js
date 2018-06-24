@@ -16,7 +16,7 @@ block(
     each srcc, i in images
         image(src=i)
 `;
-
+global.tests = console.log
 const parse = require('../index')
 
 console.log(parse({
@@ -50,7 +50,7 @@ console.log(parse({
             //    console.log(element)
             // });
             // console.log(params[0],typeof params[0], params[0].name, '!!!!!!')
-            return `'image' + pug_attr("${params[0].name}", ${params[0].val}, true, false) `
+            return `'image' + tests(pug_attr("${params[0].name}", ${params[0].val}, true, false)) + tests(111)`
           }
         }
       }
@@ -58,4 +58,44 @@ console.log(parse({
     compileDebug: false,
     pretty: true,
     inlineRuntimeFunctions: true,
-})())
+    globals: ['tests']
+})({__m: {
+    log: console.log
+}}))
+
+
+// const testInpl = {
+//     image: new Model({
+//         schema: {
+//             //ajv || joi
+//         },
+//         render() {
+//             //
+//         }
+//     })
+// }
+
+// class Model {
+//     constructor({
+//         schema,
+//         render,
+//         renderBefore = false,
+//         renderAfter = false
+//     }) {
+//         //нет schema = ошибка
+//         this.schema = schema
+//         this.render = render
+//         this.renderBefore = renderBefore
+//         this.renderAfter = renderAfter
+//     }
+//     //эта функция будет на уровне препроцесинга
+//     //создавать массив аргументов и передавать его в карр. функцию рендер
+//     _addArg() {
+//         //сопоставить схиму и аргументы
+//         //написать валидацию
+//     }
+    
+//     _render(isBefore) {
+//         return 
+//     }
+// }
