@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install": "npm i && cd ./lib/runtime && npm i",
+    "build": "node ./lib/runtime/prepublish.js",
+    "build_all": "npm run install"
   },
   "repository": {
     "type": "git",
