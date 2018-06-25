@@ -2,6 +2,7 @@ const template = `
 block(
         id='id-1-2-3'
         class='block-class'
+        hz={aa: 22}
     )
     image(
         src='/href'
@@ -34,7 +35,7 @@ console.log(parse({
             // console.log(params)
            
             // return ` pug_attr("srsc", i, true, false) `
-            return `'block' + pug_attr("${params[0].name}", ${params[0].val}, true, false) `
+            return 'block'
           }
         },
         gallery: {
@@ -43,7 +44,7 @@ console.log(parse({
             //   params.forEach(element => {
             //    console.log(element)
             // });
-            return `'gallery' + pug_attr("${params[0].name}", ${params[0].val}, true, false) `
+            return 'gallery'
           }
         },
         image: {
@@ -53,11 +54,9 @@ console.log(parse({
             //    console.log(element)
             // });
             // console.log(params[0],typeof params[0], params[0].name, '!!!!!!')
-            return `'image' + tests(pug_attr("${params[0].name}", ${params[0].val}, true, false)) + tests(111)`
+            return 'image'
           }
         }
       }
 }, {
-})({__m: {
-    log: console.log
-}}))
+}))
