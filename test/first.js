@@ -25,23 +25,30 @@ console.log(parse({
     tagModels: {
         block: {
           schema: {
-              id: String,
-              class: String
+            "properties": {
+              "class": {
+                  "type": "number"
+              },
+              "hz": {
+                  "type": "object"
+              }
+            }
           },
-          render(params, texts) {
-            return `block: ${params.id}, ${texts}`
+          render(err, attrs) {
+              console.log(err, '!!!')
+            return `block: ${attrs}`
           }
         },
         gallery: {
             schema: {},
-          render(params, texts) {
-            return `gallery: ${params}, ${texts}`
+          render(err, attrs) {
+            return `gallery: ${attrs}`
           }
         },
         image: {
             schema: {},
-          render(params, texts) {
-            return `image: ${params}, ${texts}`
+          render(err, attrs) {
+            return `image: ${attrs}`
           }
         }
       }
