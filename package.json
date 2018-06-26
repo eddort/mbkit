@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install": "npm i && cd ./lib/runtime && npm i",
+    "install:all": "npm i && cd ./lib/runtime && npm i",
     "build": "node ./lib/runtime/prepublish.js",
-    "build_all": "npm run install"
+    "publish": "npm run install:all && npm run build"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
   "homepage": "https://github.com/Eddort/mbkit#readme",
   "keywords": [
     "pug",
-    "mbkit-pug"
+    "tag-model-pug"
   ],
   "dependencies": {
     "ajv": "^6.5.1",

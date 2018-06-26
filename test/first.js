@@ -7,7 +7,7 @@ block(
     image(
         src='/href'
     ) AAAAAAAAA
-block(id='id-1-2-4')
+block(id='id-1-2-4' class='block-class')
     BEFORE
         gallery(
             images='2'
@@ -18,39 +18,43 @@ block(id='id-1-2-4')
         image(src=i test=images) ssssss
 `;
 
-const parse = require('../index')
+const parse = require("../index");
 
-console.log(parse({
-    template,
-    tagModels: {
-        block: {
-          schema: {
-            "properties": {
-              "class": {
-                  "type": "number"
-              },
-              "hz": {
-                  "type": "object"
-              }
-            }
-          },
-          render(err, attrs) {
-              console.log(err, '!!!')
-            return `block: ${attrs}`
-          }
-        },
-        gallery: {
-            schema: {},
-          render(err, attrs) {
-            return `gallery: ${attrs}`
-          }
-        },
-        image: {
-            schema: {},
-          render(err, attrs) {
-            return `image: ${attrs}`
-          }
-        }
-      }
-}, {
-}))
+console.log(
+	parse(
+		{
+			template,
+			tagModels: {
+				block: {
+					schema: {
+						type: "object",
+						properties: {
+							class: {
+								type: "number"
+							},
+							hz: {
+								type: "object"
+							}
+						}
+					},
+					render(err, attrs) {
+						console.log(err, "!!!");
+						return `block: ${attrs}`;
+					}
+				},
+				gallery: {
+					schema: {},
+					render(err, attrs) {
+						return `gallery: ${attrs}`;
+					}
+				},
+				image: {
+					schema: {},
+					render(err, attrs) {
+						return `image: ${attrs}`;
+					}
+				}
+			}
+		}
+	)
+);
