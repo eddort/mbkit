@@ -17,11 +17,10 @@ const tags = [
 
 const template = `
 body
-	div
-	div
+  div hello
+  div.test(a='aa') world
 `
 //TODO parent
-//todo parse _text
 console.log(
 	parse(
 		{
