@@ -20,29 +20,33 @@ body
 	div
 	div
 `
-//TODO indent errors
-// (
-// (
-//   )(
-//   )
-// )
-//TODO ошибка если не attr
-//TODO parent и childs
+//TODO parent
+//todo parse _text
 console.log(
 	parse(
 		{
 			template,
 			tagModels: tags.reduce((acc, tag) => {
 				acc[tag] = {
-					schema: {},
+					schema: {
+						
+					},
 					// render(err, attr) {
 					// 	return `${tag}: ___`
 					// }
 					renderBefore(err, attr) {
-						return `{test:111, aaa:`
+						return `{\f`
+					},
+					render(err, attr) {
+						// console.log(err, Object.keys(attr).length, attr)
+						// if (err) {
+						// 	return JSON.stringify(attr)
+						// }
+						console.log(JSON.stringify({...attr, _nodes: null}))
+						return 'asdsadasd:asdsad'
 					},
 					renderAfter(err, attr) {
-						return '},'
+						return '},\n'
 					}
 				}
 				return acc
