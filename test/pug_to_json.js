@@ -11,15 +11,25 @@ const tags = [
 	"header",
 	"head",
 	"body",
-	"html"
+	"html",
+	"p",
+	"while"
 ];
 
 
 const template = `
-body
-  div hello
-  div.test(a='aa') world
-`
+html(lang='en')  
+	head
+		title Pug
+	body
+		h1 Pug Examples
+		div.container
+		p(aa=123) Cool Pug example!
+		- var n = 0;
+		ul
+			each n in [1,2,3,4]
+				li= n
+`;
 //TODO parent
 console.log(
 	parse(
