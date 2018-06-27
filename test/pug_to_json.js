@@ -16,7 +16,10 @@ const tags = [
 	"while"
 ];
 
-
+//todo нужно парсить текст контент иначе
+// | Hey, check out 
+// a(href="http://example.biz/kitteh.png") this picture
+// |  of my cat!
 const template = `
 html(lang='en')  
 	head
@@ -28,7 +31,7 @@ html(lang='en')
 		- var n = 0;
 		ul
 			each n in [1,2,3,4]
-				li= n
+				li(ss=n) sssss #{n}
 `;
 //TODO parent
 console.log(
