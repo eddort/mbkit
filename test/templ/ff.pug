@@ -26,8 +26,8 @@ header
 		value Введите значение
 	menu
 		enabled true
-		Главная Главная
-		О НасО Нас
+		Главная ["Главная", ]
+		ОНасО Нас
 		Услуги Услуги
 		Портфолио Портфолио
 		Команда Команда
@@ -42,7 +42,10 @@ content
 	block
 		image[картинка]
 		text## О Нас
-		button Подробнее
+		button
+			- some
+			- array
+			- value
 
 footer
 	enabled true
